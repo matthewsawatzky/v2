@@ -58,13 +58,13 @@ jobs:
           tags: ghcr.io/${{ steps.names.outputs.repository }}-worker:${{ steps.names.outputs.version }}
           labels: org.opencontainers.image.source=https://github.com/${{ github.repository }}
       - name: Attest controller image
-        uses: actions/attest@v4
+        uses: actions/attest@v4.2.0
         with:
           subject-name: ghcr.io/${{ steps.names.outputs.repository }}-controller
           subject-digest: ${{ steps.controller.outputs.digest }}
           push-to-registry: true
       - name: Attest worker image
-        uses: actions/attest@v4
+        uses: actions/attest@v4.2.0
         with:
           subject-name: ghcr.io/${{ steps.names.outputs.repository }}-worker
           subject-digest: ${{ steps.worker.outputs.digest }}
